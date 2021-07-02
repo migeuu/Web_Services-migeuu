@@ -4,11 +4,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 
+import employeesRoute from "./routes/employees.js";
 dotenv.config();
-
-const app = express();
-app.use(bodyParser.json());
-app.use(cors());
 
 const { MONGODB_URL, PORT } = process.env;
 
@@ -23,6 +20,14 @@ if (!PORT) {
     "Defina uma variável de ambiente com nome PORT no arquivo .env.local"
   );
 }
+
+const app = express();
+
+app.use("/employees", employeesRoute);
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 
 mongoose
   .connect(MONGODB_URL, {
