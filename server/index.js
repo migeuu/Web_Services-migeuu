@@ -23,12 +23,11 @@ if (!PORT) {
 
 const app = express();
 
-app.use("/employees", employeesRoute);
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
+app.use("/", employeesRoute);
 mongoose
   .connect(MONGODB_URL, {
     useNewUrlParser: true,
