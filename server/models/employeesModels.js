@@ -7,7 +7,7 @@ const employeesSchema = new mongoose.Schema({
     trim: true,
   },
   cpf: {
-    type: Number,
+    type: String,
     required: [true, "Campo não pode ficar vazio"],
     unique: true,
     trim: true,
@@ -24,7 +24,7 @@ const employeesSchema = new mongoose.Schema({
     trim: true,
   },
   salary: {
-    type: Number,
+    type: String,
     required: [true, "Campo não pode ficar vazio"],
     trim: true,
   },
