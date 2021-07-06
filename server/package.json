@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "debug": "nodemon index.js"
+    "debug": "nodemon index.js",
+    "populate": "node populate.js"
   },
   "keywords": [],
   "author": "",
