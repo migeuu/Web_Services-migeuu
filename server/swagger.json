@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "API de manipulação banco de dados de usuários",
+    "title": "API de manipulação banco de dados de funcionários",
     "description": "Essa API tem como objetivo manipular os dados de uma lista de usário para um desafio prático",
     "contact": {
       "email": "sepulvedabruna@gmail.com"
