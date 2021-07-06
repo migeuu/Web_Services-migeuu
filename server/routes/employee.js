@@ -16,6 +16,6 @@ const router = express.Router();
 
 router.post("/", checkCpfAndSalary, updateOrCreate);
 router.get("/", checkByQuery, getByQuery);
-router.delete("/:cpf", checkCPFtoDelete, deleteByCPF);
+router.delete("/", checkCPFtoDelete, deleteByCPF);
 
 export default router;

@@ -125,7 +125,7 @@ function checkByQuery(request, response, next) {
 }
 
 const checkCPFtoDelete = (request, response, next) => {
-  const { cpf } = request.params;
+  const { cpf } = request.query;
   const regex = /^\d{11}$/;
   if (!regex.test(cpf)) {
     return response

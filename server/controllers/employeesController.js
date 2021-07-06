@@ -140,7 +140,7 @@ async function getByQuery(request, response, next) {
 
 async function deleteByCPF(request, response, next) {
   try {
-    const { cpf } = request.params;
+    const { cpf } = request.query;
     const employee = await EmployeesModel.findOne({ cpf });
     if (!employee) {
       return response.status(StatusCodes.NOT_FOUND).json({
