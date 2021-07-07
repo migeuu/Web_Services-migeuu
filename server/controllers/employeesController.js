@@ -4,8 +4,9 @@ import EmployeesModel from "../models/employeesModels.js";
 async function getEmployeesByName(request, response, next) {
   try {
     const { name } = request.query;
-    console.log(name);
-    const employees = await EmployeesModel.find({ name });
+    const employees = await EmployeesModel.find({
+      name: new RegExp(name, "i"),
+    });
     if (employees.length === 0) {
       return response.status(StatusCodes.NOT_FOUND).json({
         message: "Não foram encontrados(as) funcionários(as) com esse nome",
@@ -35,7 +36,9 @@ async function getEmployeesByCPF(request, response, next) {
 async function getEmployeesByJobTitle(request, response, next) {
   try {
     const { jobTitle } = request.query;
-    const employees = await EmployeesModel.find({ jobTitle });
+    const employees = await EmployeesModel.find({
+      jobTitle: new RegExp(jobTitle, "i"),
+    });
     if (employees.length === 0) {
       return response
         .status(StatusCodes.NOT_FOUND)

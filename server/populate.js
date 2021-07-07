@@ -24,13 +24,13 @@ mongoose
   })
   .then(() => EmployeesModel.collection.drop())
   .then(() =>
-    EmployeesModel.insertMany(funcionarios).then(function () {
-      console.log("Data inserted"); // Success
-    })
+    EmployeesModel.insertMany(funcionarios)
+      .then(function () {
+        console.log("Data inserted"); // Success
+      })
+      .then(() => mongoose.connection.close())
   )
   .catch((err) => {
     console.error(err.message);
     process.exit(1);
   });
-
-mongoose.connection.close();
