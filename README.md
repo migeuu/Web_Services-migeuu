@@ -82,7 +82,7 @@ O [Create React App](https://create-react-app.dev/) é uma aplicação com confi
 
 ## Este projeto usa SASS 4.14.1
 
-Para que não ocorra nenhum problema observe se a versão do node que você está usando suporta o [Sass] (https://sass-lang.com/).
+Para que não ocorra nenhum problema observe se a versão do node que você está usando suporta o [Sass](https://sass-lang.com/).
 
 ### Iniciando o projeto
 
