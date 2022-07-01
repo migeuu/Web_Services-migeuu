@@ -1,3 +1,7 @@
+// File created to populate the DB with placeholder data so it can run tests
+// File created to populate the DB with placeholder data so it can run tests
+// File created to populate the DB with placeholder data so it can run tests
+
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { createRequire } from "module";
