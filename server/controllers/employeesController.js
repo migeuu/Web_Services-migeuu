@@ -178,6 +178,7 @@ async function update(request, response, next) {
     return next(err);
   }
 }
+
 async function create(request, response, next) {
   try {
     const { createdAt, jobTitle, cpf, name, state, salary, status } =

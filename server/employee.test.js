@@ -68,16 +68,41 @@ describe("API Create/Update/Delete Data Services", () => {
       .send({
         status: "ATIVO",
         createdAt: "01/07/2022",
-        jobTitle: "Dev Jr",
-        cpf: "42662024070",
-        name: "Teste 2",
-        state: "RN",
-        salary: "8965.30",
+        jobTitle: "Dev Senior",
+        cpf: "10873848004",
+        name: "Joao Pedro Alvares Cabral",
+        state: "RS",
+        salary: "10000.30",
       })
       .set("Content-Type", "application/json")
       .set("Accept", "application/json");
 
+    console.log(req._body);
     expect(req.statusCode).toBe(201);
-    expect(req._body).toHaveProperty("id", console.log(req._body.id));
+    expect(req._body).toHaveProperty("id");
+  });
+
+  it("Update a employee", async () => {
+    const req = await request(app)
+      .post("/employee")
+      .send({
+        status: "BLOQUEADO",
+        createdAt: "15/04/2017",
+        id: "62be8048f267e4211cda5407",
+        jobTitle: "Analista SENIOR",
+        cpf: "17949337435",
+        name: "Bertie Agans",
+        state: "SP",
+        salary: "9000.00",
+      })
+      .set("Content-Type", "application/json")
+      .set("Accept", "application/json");
+
+    expect(req.statusCode).toBe(200);
+  });
+
+  it("Delete a employee", async () => {
+    const req = await request(app).delete("/employee?cpf=90491769768");
+    expect(req.statusCode).toBe(204);
   });
 });
