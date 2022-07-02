@@ -9,20 +9,26 @@ import { Status } from "./pages/SearchStatus";
 import { Salary } from "./pages/SearchSalary";
 import { Date } from "./pages/SearchDate";
 import { State } from "./pages/SearchState";
+import { CreateMenu } from "./pages/CreateMenu";
+import { CreateEmployee } from "./pages/CreateEmployee";
+import { UpdateEmployee } from "./pages/UpdateEmployee";
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/pesquisar" component={SearchMenu} />
-        <Route exact path="/pesquisar/cpf" component={CPF} />
-        <Route exact path="/pesquisar/name" component={Name} />
-        <Route exact path="/pesquisar/jobTitle" component={JobTitle} />
-        <Route exact path="/pesquisar/status" component={Status} />
-        <Route exact path="/pesquisar/salary" component={Salary} />
-        <Route exact path="/pesquisar/date" component={Date} />
-        <Route exact path="/pesquisar/state" component={State} />
+        <Route exact path="/search" component={SearchMenu} />
+        <Route exact path="/search/cpf" component={CPF} />
+        <Route exact path="/search/name" component={Name} />
+        <Route exact path="/search/job-title" component={JobTitle} />
+        <Route exact path="/search/status" component={Status} />
+        <Route exact path="/search/salary" component={Salary} />
+        <Route exact path="/search/date" component={Date} />
+        <Route exact path="/search/state" component={State} />
+        <Route exact path="/create" component={CreateMenu} />
+        <Route exact path="/create/employee" component={CreateEmployee} />
+        <Route exact path="/update/employee" component={UpdateEmployee} />
       </Switch>
     </BrowserRouter>
   );

@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { getByState } from "../service/requestAPI";
 import { Header } from "../components/Header";
-import { List } from "../components/List";
-import "../styles/search.scss";
 
 export function State() {
   const [state, setState] = useState(null),
@@ -37,7 +35,9 @@ export function State() {
   }, [state]);
   return (
     <div id="search-content">
-      <Header title={"O estado deve ser uma sígla duas letras"} />
+      <Header
+        title={"O estado deve ser uma sígla de duas letras (MAIÚSCULAS)"}
+      />
       <main>
         <form>
           <input

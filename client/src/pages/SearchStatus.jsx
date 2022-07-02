@@ -2,7 +2,6 @@ import React, { useEffect, useState, useMemo } from "react";
 import { getByStatus } from "../service/requestAPI";
 import { Header } from "../components/Header";
 import { List } from "../components/List";
-import "../styles/search.scss";
 
 export function Status() {
   const [status, setStatus] = useState(null),

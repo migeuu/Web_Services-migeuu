@@ -74,3 +74,21 @@ export async function getByState(state) {
     return error;
   }
 }
+
+export async function createEmployee(employeeData) {
+  try {
+    const rawResponse = await fetch(`http://localhost:5000/employee`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(employeeData),
+    });
+
+    const data = await rawResponse.json();
+    return data;
+  } catch (error) {
+    return error;
+  }
+}

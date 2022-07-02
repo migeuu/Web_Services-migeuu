@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { getByCPF } from "../service/requestAPI";
 import { Header } from "../components/Header";
-import { List } from "../components/List";
-import "../styles/search.scss";
+import { ListWithId } from "../components/ListWithId";
 
 export function CPF() {
   const [cpf, setCpf] = useState(null),
@@ -12,8 +11,11 @@ export function CPF() {
 
   function getCpf(event) {
     event.preventDefault();
-    setCpf(valueInput);
+    if (!cpf) {
+      setCpf(valueInput);
+    }
   }
+
   function testCPF(value) {
     const regex = /^\d{11}$/;
     return !regex.test(value);
@@ -22,17 +24,14 @@ export function CPF() {
   const fetchdata = async () => {
     if (cpf) {
       const results = await getByCPF(cpf);
-      const { message } = results;
-      if (message) {
-        setData(message);
-      } else {
-        setData(results);
-      }
+      setData(results);
     }
   };
+
   useEffect(() => {
     fetchdata();
   }, [cpf]);
+
   return (
     <div id="search-content">
       <Header title={"CPF deve ter 11 dígitos"} />
@@ -49,7 +48,7 @@ export function CPF() {
           </button>
         </form>
         {typeof data === "string" ? <p> {data} </p> : ""}
-        {typeof data[0] === "object" ? <List employees={data} /> : ""}
+        {typeof data === "object" ? <ListWithId employee={data} /> : ""}
       </main>
     </div>
   );

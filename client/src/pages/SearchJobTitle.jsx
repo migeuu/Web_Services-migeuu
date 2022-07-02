@@ -2,7 +2,6 @@ import React, { useEffect, useState, useMemo } from "react";
 import { getByJobTitle } from "../service/requestAPI";
 import { Header } from "../components/Header";
 import { List } from "../components/List";
-import "../styles/search.scss";
 
 export function JobTitle() {
   const [jobTitle, setJobTitle] = useState(null),
@@ -31,9 +30,11 @@ export function JobTitle() {
       }
     }
   };
+
   useEffect(() => {
     fetchdata();
   }, [jobTitle]);
+  
   return (
     <div id="search-content">
       <Header title={"Cargo"} />

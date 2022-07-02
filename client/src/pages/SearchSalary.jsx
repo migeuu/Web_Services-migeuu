@@ -2,7 +2,6 @@ import React, { useEffect, useState, useMemo } from "react";
 import { getBySalary } from "../service/requestAPI";
 import { Header } from "../components/Header";
 import { List } from "../components/List";
-import "../styles/search.scss";
 
 export function Salary() {
   const [salary, setSalary] = useState(null),
@@ -31,9 +30,11 @@ export function Salary() {
       }
     }
   };
+  
   useEffect(() => {
     fetchdata();
   }, [salary]);
+
   return (
     <div id="search-content">
       <Header title={"O salário deve ter dois número após o ponto"} />

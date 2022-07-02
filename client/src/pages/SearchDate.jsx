@@ -2,7 +2,6 @@ import React, { useEffect, useState, useMemo } from "react";
 import { getByDate } from "../service/requestAPI";
 import { Header } from "../components/Header";
 import { List } from "../components/List";
-import "../styles/search.scss";
 
 export function Date() {
   const [date, setDate] = useState(null),
