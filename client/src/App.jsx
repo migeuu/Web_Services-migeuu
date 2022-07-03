@@ -9,9 +9,8 @@ import { Status } from "./pages/SearchStatus";
 import { Salary } from "./pages/SearchSalary";
 import { Date } from "./pages/SearchDate";
 import { State } from "./pages/SearchState";
-import { CreateMenu } from "./pages/CreateMenu";
 import { CreateEmployee } from "./pages/CreateEmployee";
-import { UpdateEmployee } from "./pages/UpdateEmployee";
+import { DeleteEmployee } from "./pages/DeleteEmployee";
 
 function App() {
   return (
@@ -26,9 +25,8 @@ function App() {
         <Route exact path="/search/salary" component={Salary} />
         <Route exact path="/search/date" component={Date} />
         <Route exact path="/search/state" component={State} />
-        <Route exact path="/create" component={CreateMenu} />
-        <Route exact path="/create/employee" component={CreateEmployee} />
-        <Route exact path="/update/employee" component={UpdateEmployee} />
+        <Route exact path="/create" component={CreateEmployee} />
+        <Route exact path="/delete" component={DeleteEmployee} />
       </Switch>
     </BrowserRouter>
   );

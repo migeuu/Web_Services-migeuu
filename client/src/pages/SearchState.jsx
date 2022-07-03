@@ -21,7 +21,6 @@ export function State() {
   const fetchdata = async () => {
     if (state) {
       const results = await getByState(state);
-      console.log({ results });
       const { message } = results;
       if (message) {
         setData(message);

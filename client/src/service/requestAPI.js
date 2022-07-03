@@ -92,3 +92,20 @@ export async function createEmployee(employeeData) {
     return error;
   }
 }
+
+export async function deleteEmployee(employeeCPF) {
+  try {
+    const request = await fetch(
+      `http://localhost:5000/employee?cpf=${employeeCPF}`,
+      { method: "DELETE" }
+    );
+
+    if (request.status === 404) {
+      return request.json();
+    } else {
+      return request;
+    }
+  } catch (error) {
+    return error;
+  }
+}

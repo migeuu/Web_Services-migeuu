@@ -24,7 +24,11 @@ export function CPF() {
   const fetchdata = async () => {
     if (cpf) {
       const results = await getByCPF(cpf);
-      setData(results);
+      if (results.hasOwnProperty("message")) {
+        setData(results.message);
+      } else {
+        setData(results);
+      }
     }
   };
 

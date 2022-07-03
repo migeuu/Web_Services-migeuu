@@ -11,7 +11,6 @@ describe("API Data Services", () => {
   // Returns a list of employees by NAME queried
   it("returns employee by NAME", async () => {
     const res = await request(app).get("/employee?name=Afonso");
-    console.log(res);
     expect(res._body[0]).toHaveProperty("name");
     expect(res._body[0].name).toBe("Bernie Afonso");
   });
@@ -77,7 +76,6 @@ describe("API Create/Update/Delete Data Services", () => {
       .set("Content-Type", "application/json")
       .set("Accept", "application/json");
 
-    console.log(req._body);
     expect(req.statusCode).toBe(201);
     expect(req._body).toHaveProperty("id");
   });

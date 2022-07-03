@@ -11,7 +11,7 @@ export function Home() {
       <main>
         <div className="default-menu">
           <Link to={"/search"}>Pesquisar</Link>
-          <Link to={"/create"}>Criar</Link>
+          <Link to={"/create"}>Criar/Atualizar</Link>
           <Link to={"/delete"}>Remover</Link>
         </div>
       </main>

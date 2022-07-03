@@ -22,7 +22,6 @@ export function Date() {
   const fetchdata = async () => {
     if (date) {
       const results = await getByDate(date);
-      console.log({ results });
       const { message } = results;
       if (message) {
         setData(message);
